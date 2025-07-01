@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:food_ordering_app/home_screen/home_screen.dart';
+import 'package:food_ordering_app/widgets/primary_button.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -38,27 +40,18 @@ class SplashScreen extends StatelessWidget {
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: InkWell(
+            child: PrimaryButton(
               onTap: () {
-                log('Button Pressed');
-              },
-              child: Container(
-                height: 61,
-                width: double.maxFinite,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(23),
-                  color: const Color(0xFFFFA500),
-                ),
-                child: Text(
-                  'Get Started',
-                  style: TextStyle(
-                    color: const Color(0xFF101010),
-                    fontWeight: FontWeight.w800,
-                    fontSize: 16,
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return HomeScreen();
+                    },
                   ),
-                ),
-              ),
+                );
+              },
+              text: 'Get Started',
             ),
           ),
           const SizedBox(height: 20),
