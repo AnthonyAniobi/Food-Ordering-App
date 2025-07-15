@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_ordering_app/constants/app_images.dart';
+import 'package:food_ordering_app/home_screen/models/restaurant_model.dart';
 
 class RestaurantCard extends StatelessWidget {
-  const RestaurantCard({super.key});
+  final RestaurantModel restaurant;
+
+  const RestaurantCard({super.key, required this.restaurant});
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +26,7 @@ class RestaurantCard extends StatelessWidget {
                 bottom: 15,
                 child: ClipPath(
                   clipper: CustomCardClipper(),
-                  child: Image.asset(
-                    'assets/images/products/pizza_place.png',
-                    fit: BoxFit.cover,
-                  ),
+                  child: Image.asset(restaurant.image, fit: BoxFit.cover),
                 ),
               ),
               Positioned(
@@ -49,7 +49,7 @@ class RestaurantCard extends StatelessWidget {
         ),
 
         Text(
-          'The Pizza Palace',
+          restaurant.name,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
         ),
         Row(

@@ -1,11 +1,29 @@
+import 'dart:developer';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_ordering_app/constants/app_images.dart';
+import 'package:food_ordering_app/home_screen/models/restaurant_model.dart';
+import 'package:food_ordering_app/home_screen/widgets/home_screen_loader.dart';
 import 'package:food_ordering_app/home_screen/widgets/restaurant_card.dart';
 import 'package:food_ordering_app/widgets/primary_button.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<RestaurantModel> restaurants = [];
+  bool isLoading = true;
+  @override
+  void initState() {
+    super.initState();
+    fetchRestaurants();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -111,43 +129,61 @@ class HomeScreen extends StatelessWidget {
 
             SizedBox(height: 40),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Popular Restaurants',
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+            if (isLoading)
+              HomeScreenLoader()
+            else
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Popular Restaurants',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+
+                      Text(
+                        'View All',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF797D82),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
+                  SizedBox(height: 20),
 
-                Text(
-                  'View All',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF797D82),
+                  ...restaurants.map(
+                    (rest) => RestaurantCard(restaurant: rest),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
 
-            RestaurantCard(),
-            RestaurantCard(),
-            RestaurantCard(),
-            RestaurantCard(),
+                  SizedBox(height: 20),
 
-            SizedBox(height: 20),
-
-            PrimaryButton(onTap: () {}, text: 'View all restaurants'),
-
+                  PrimaryButton(onTap: () {}, text: 'View all restaurants'),
+                ],
+              ),
             SizedBox(height: 20),
           ],
         ),
       ),
     );
+  }
+
+  Future<void> fetchRestaurants() async {
+    // get all restuarants
+    await Future.delayed(const Duration(seconds: 2));
+    final snapshot =
+        await FirebaseFirestore.instance.collection('restaurants').get();
+    final restaurantList =
+        snapshot.docs.map((dt) => RestaurantModel.fromJson(dt.data())).toList();
+    restaurants = restaurantList;
+    // setState(() {
+    //   isLoading = false;
+    // });
   }
 }

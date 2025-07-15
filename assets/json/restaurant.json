@@ -1,0 +1,176 @@
+[
+    {
+        "id": "rs1",
+        "name": "The Pizza Palace",
+        "rating": 5,
+        "image": "assets/images/products/pizza_place.png",
+        "deliveryTime": "20-30mins",
+        "infoText": "Free delivery on orders above $50",
+        "products": [
+            {
+                "id": "0",
+                "image": "assets/images/products/pizza1.png",
+                "name": "Kings Deal",
+                "description": "Any medium classic pizza + a chocolate pizza + a pet drink",
+                "category": "Combo deals",
+                "price": 20.34
+            },
+            {
+                "id": "1",
+                "image": "assets/images/products/pizza2.png",
+                "name": "BBQ Chicken",
+                "description": "Pizza coated with BBQ sauce, cheese & grilled chicken",
+                "category": "Classic Pizza",
+                "price": 12.45
+            },
+            {
+                "id": "2",
+                "image": "assets/images/products/pizza3.png",
+                "name": "BBQ Beef",
+                "description": "Pizza coated with BBQ sauce, cheese & topped with beef",
+                "category": "Classic Pizza",
+                "price": 12.89
+            },
+            {
+                "id": "3",
+                "image": "assets/images/products/pizza4.png",
+                "name": "Veggie Supreme",
+                "description": "Pizza coated with Tomato sauce, cheese & vegetable toppings",
+                "category": "Classic Pizza",
+                "price": 13.00
+            },
+            {
+                "id": "4",
+                "image": "assets/images/products/pizza5.png",
+                "name": "BBQ Mega",
+                "description": "BBQ sauce, chicken, meatballs, smoked sausages & peperoni",
+                "category": "Premium Pizza",
+                "price": 18.78
+            },
+            {
+                "id": "5",
+                "image": "assets/images/products/pizza6.png",
+                "name": "Chicken Bali",
+                "description": "Tomato sauce, cheese, grilled chicken, pineapple & mushroom",
+                "category": "Premium Pizza",
+                "price": 16.90
+            },
+            {
+                "id": "6",
+                "image": "assets/images/products/pizza7.png",
+                "name": "Extravaganzza",
+                "description": "Tomato sauce, cheese, pepper, pepperoni, beef, onions & olives",
+                "category": "Premium Pizza",
+                "price": 19.99
+            },
+            {
+                "id": "8",
+                "image": "assets/images/products/wings.png",
+                "name": "Chicken Wings",
+                "description": "Choose between - 6pcs, 12pcs or 18pcs",
+                "category": "Sides",
+                "price": 6.45
+            },
+            {
+                "id": "9",
+                "image": "assets/images/products/chips.png",
+                "name": "French Fries",
+                "description": "Choose between - extra large, large or regular",
+                "category": "Sides",
+                "price": 5.50
+            },
+            {
+                "id": "10",
+                "image": "assets/images/products/salad.png",
+                "name": "Salad",
+                "description": "Choose between - Caesar, Avocado or Greek-wedge",
+                "category": "Sides",
+                "price": 9.99
+            },
+            {
+                "id": "11",
+                "image": "assets/images/products/cocacola.png",
+                "name": "Soda",
+                "description": "Choose between a wide range of soda drinks",
+                "category": "Drinks",
+                "price": 11.99
+            },
+            {
+                "id": "12",
+                "image": "assets/images/products/water.png",
+                "name": "Water",
+                "description": "Choose between a regular or sparkling",
+                "category": "Drinks",
+                "price": 7.99
+            }
+        ]
+    },
+    {
+        "id": "rs2",
+        "name": "Burger King",
+        "rating": 3,
+        "image": "assets/images/products/burger_king.png",
+        "deliveryTime": "20-30mins",
+        "infoText": "Free delivery on orders above $50",
+        "products": [
+            {
+                "id": "8",
+                "image": "assets/images/products/wings.png",
+                "name": "Chicken Wings",
+                "description": "Choose between - 6pcs, 12pcs or 18pcs",
+                "category": "Sides",
+                "price": 6.45
+            },
+            {
+                "id": "9",
+                "image": "assets/images/products/chips.png",
+                "name": "French Fries",
+                "description": "Choose between - extra large, large or regular",
+                "category": "Sides",
+                "price": 5.50
+            },
+            {
+                "id": "10",
+                "image": "assets/images/products/salad.png",
+                "name": "Salad",
+                "description": "Choose between - Caesar, Avocado or Greek-wedge",
+                "category": "Sides",
+                "price": 9.99
+            },
+            {
+                "id": "11",
+                "image": "assets/images/products/cocacola.png",
+                "name": "Soda",
+                "description": "Choose between a wide range of soda drinks",
+                "category": "Drinks",
+                "price": 11.99
+            },
+            {
+                "id": "12",
+                "image": "assets/images/products/water.png",
+                "name": "Water",
+                "description": "Choose between a regular or sparkling",
+                "category": "Drinks",
+                "price": 7.99
+            }
+        ]
+    },
+    {
+        "id": "rs3",
+        "name": "The Ice Cream Factory",
+        "rating": 4,
+        "image": "assets/images/products/icecream.png",
+        "deliveryTime": "20-30mins",
+        "infoText": "Free delivery on orders above $50",
+        "products": []
+    },
+    {
+        "id": "rs4",
+        "name": "The Coffee House",
+        "rating": 5,
+        "image": "assets/images/products/coffee_house.png",
+        "deliveryTime": "20-30mins",
+        "infoText": "Free delivery on orders above $50",
+        "products": []
+    }
+]

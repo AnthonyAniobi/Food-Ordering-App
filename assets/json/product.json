@@ -1,0 +1,224 @@
+[
+    {
+        "id": "0",
+        "image": "assets/images/products/pizza1.png",
+        "name": "Kings Deal",
+        "description": "Any medium classic pizza + a chocolate pizza + a pet drink",
+        "category": "Combo deals",
+        "price": 20.34,
+        "size": [
+            {"Small": 20.34},
+            {"Large": 30.34},
+            {"X-Large": 40.34}
+        ],
+        "variants": [
+            "BBQ Chicken",
+            "BBQ Beef",
+            "Vegis Supreme"
+        ],
+        "drink": [
+            "Coke",
+            "Sprite",
+            "Fanta",
+            "Pepsi",
+            "Beer",
+            "Lemonade",
+            "Water"
+        ]
+    },
+    {
+        "id": "1",
+        "image": "assets/images/products/pizza2.png",
+        "name": "BBQ Chicken",
+        "description": "Pizza coated with BBQ sauce, cheese & grilled chicken",
+        "category": "Classic Pizza",
+        "price": 12.45,
+        "size": [
+            {"Small": 12.45},
+            {"Large": 20.35},
+            {"X-Large": 40.00}
+        ],
+        "variants": [],
+        "drink": [
+            "Coke",
+            "Sprite",
+            "Fanta",
+            "Pepsi"
+        ]
+    },
+    {
+        "id": "2",
+        "image": "assets/images/products/pizza3.png",
+        "name": "BBQ Beef",
+        "description": "Pizza coated with BBQ sauce, cheese & topped with beef",
+        "category": "Classic Pizza",
+        "price": 12.89,
+        "size": [
+            {"Small": 12.89},
+            {"Large": 15.35},
+            {"X-Large": 19.85}
+        ],
+        "variants": [],
+        "drink": [
+            "Coke",
+            "Sprite",
+            "Fanta",
+            "Pepsi"
+        ]
+    },
+    {
+        "id": "3",
+        "image": "assets/images/products/pizza4.png",
+        "name": "Veggie Supreme",
+        "description": "Pizza coated with Tomato sauce, cheese & vegetable toppings",
+        "category": "Classic Pizza",
+        "price": 13.00,
+        "size": [
+            {"Small": 13.00},
+            {"Large": 20.50},
+            {"X-Large": 26.40}
+        ],
+        "variants": [],
+        "drink": [
+            "Coke",
+            "Sprite",
+            "Fanta",
+            "Pepsi"
+        ]
+    },
+    {
+        "id": "4",
+        "image": "assets/images/products/pizza5.png",
+        "name": "BBQ Mega",
+        "description": "BBQ sauce, chicken, meatballs, smoked sausages & peperoni",
+        "category": "Premium Pizza",
+        "price": 18.78,
+        "size": [
+            {"Small": 18.78},
+            {"Large": 32.00},
+            {"X-Large": 40.50}
+        ],
+        "variants": [],
+        "drink": [
+            "Coke",
+            "Sprite",
+            "Fanta",
+            "Pepsi"
+        ]
+    },
+    {
+        "id": "5",
+        "image": "assets/images/products/pizza6.png",
+        "name": "Chicken Bali",
+        "description": "Tomato sauce, cheese, grilled chicken, pineapple & mushroom",
+        "category": "Premium Pizza",
+        "price": 16.90,
+        "size": [
+            {"Small": 16.90},
+            {"Large": 24.00},
+            {"X-Large": 34.00}
+        ],
+        "variants": [],
+        "drink": [
+            "Coke",
+            "Sprite",
+            "Fanta",
+            "Pepsi"
+        ]
+    },
+    {
+        "id": "6",
+        "image": "assets/images/products/pizza7.png",
+        "name": "Extravaganzza",
+        "description": "Tomato sauce, cheese, pepper, pepperoni, beef, onions & olives",
+        "category": "Premium Pizza",
+        "price": 19.99,
+        "size": [
+            {"Small": 19.99},
+            {"Large": 24.60},
+            {"X-Large": 35.60}
+        ],
+        "variants": [],
+        "drink": [
+            "Coke",
+            "Sprite",
+            "Fanta",
+            "Pepsi"
+        ]
+    },
+    {
+        "id": "8",
+        "image": "assets/images/products/wings.png",
+        "name": "Chicken Wings",
+        "description": "Choose between - 6pcs, 12pcs or 18pcs",
+        "category": "Sides",
+        "price": 6.45,
+        "size": [
+            {"6pcs": 6.45},
+            {"12pcs": 12.20},
+            {"18pcs": 20.30}
+        ],
+        "variants": [],
+        "drink": []
+    },
+    {
+        "id": "9",
+        "image": "assets/images/products/chips.png",
+        "name": "French Fries",
+        "description": "Choose between - extra large, large or regular",
+        "category": "Sides",
+        "price": 5.50,
+        "size": [
+            {"Small": 5.50},
+            {"Large": 7.00},
+            {"X-Large": 10.20}
+        ],
+        "variants": [],
+        "drink": []
+    },
+    {
+        "id": "10",
+        "image": "assets/images/products/salad.png",
+        "name": "Salad",
+        "description": "Choose between - Caesar, Avocado or Greek-wedge",
+        "category": "Sides",
+        "price": 9.99,
+        "size": [
+            {"Caesar": 9.99},
+            {"Avocado": 12.00},
+            {"Greek-wedge": 20.30}
+        ],
+        "variants": [],
+        "drink": []
+    },
+    {
+        "id": "11",
+        "image": "assets/images/products/cocacola.png",
+        "name": "Soda",
+        "description": "Choose between a wide range of soda drinks",
+        "category": "Drinks",
+        "price": 11.99,
+        "size": [],
+        "variants": [
+            "Cola",
+            "Pepsi",
+            "7up",
+            "Fanta"
+        ],
+        "drink": []
+    },
+    {
+        "id": "12",
+        "image": "assets/images/products/water.png",
+        "name": "Water",
+        "description": "Choose between a regular or sparkling",
+        "category": "Drinks",
+        "price": 7.99,
+        "size": [],
+        "variants": [
+            "Regular",
+            "Sparkling"
+        ],
+        "drink": []
+    }
+]
