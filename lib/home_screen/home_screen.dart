@@ -182,8 +182,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final restaurantList =
         snapshot.docs.map((dt) => RestaurantModel.fromJson(dt.data())).toList();
     restaurants = restaurantList;
-    // setState(() {
-    //   isLoading = false;
-    // });
+    setState(() {
+      isLoading = false;
+    });
   }
 }

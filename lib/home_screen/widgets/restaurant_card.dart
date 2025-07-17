@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_ordering_app/constants/app_images.dart';
 import 'package:food_ordering_app/home_screen/models/restaurant_model.dart';
+import 'package:food_ordering_app/restaurant_detail/restaurant_detail_screen.dart';
+import 'package:food_ordering_app/widgets/rating_widget.dart';
 
 class RestaurantCard extends StatelessWidget {
   final RestaurantModel restaurant;
@@ -26,20 +28,35 @@ class RestaurantCard extends StatelessWidget {
                 bottom: 15,
                 child: ClipPath(
                   clipper: CustomCardClipper(),
-                  child: Image.asset(restaurant.image, fit: BoxFit.cover),
+                  child: Hero(
+                    tag: restaurant.id,
+                    child: Image.asset(restaurant.image, fit: BoxFit.cover),
+                  ),
                 ),
               ),
               Positioned(
                 bottom: 0,
                 right: 0,
-                child: CircleAvatar(
-                  radius: 35,
-                  backgroundColor: Colors.black,
-                  child: SvgPicture.asset(
-                    AppSvg.horizontalArrow,
-                    colorFilter: ColorFilter.mode(
-                      Colors.white,
-                      BlendMode.srcIn,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:
+                            (context) =>
+                                RestaurantDetailScreen(restaurant: restaurant),
+                      ),
+                    );
+                  },
+                  child: CircleAvatar(
+                    radius: 35,
+                    backgroundColor: Colors.black,
+                    child: SvgPicture.asset(
+                      AppSvg.horizontalArrow,
+                      colorFilter: ColorFilter.mode(
+                        Colors.white,
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ),
                 ),
@@ -54,11 +71,7 @@ class RestaurantCard extends StatelessWidget {
         ),
         Row(
           children: [
-            star(),
-            star(),
-            star(),
-            star(),
-            star(),
+            RatingWidget(rating: restaurant.rating),
             const Spacer(),
             SvgPicture.asset(
               AppSvg.locationMinus,
@@ -73,15 +86,6 @@ class RestaurantCard extends StatelessWidget {
         ),
         SizedBox(height: 30),
       ],
-    );
-  }
-
-  SvgPicture star() {
-    return SvgPicture.asset(
-      AppSvg.star,
-      colorFilter: ColorFilter.mode(Color(0xFFFFD700), BlendMode.srcIn),
-      height: 18,
-      width: 18,
     );
   }
 }

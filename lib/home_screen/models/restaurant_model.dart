@@ -32,6 +32,14 @@ class RestaurantModel {
               .toList(),
     );
   }
+
+  Map<String, List<ProductItem>> groupedProducts() {
+    final Map<String, List<ProductItem>> groupedItems = {};
+    for (var item in products) {
+      groupedItems.putIfAbsent(item.category, () => []).add(item);
+    }
+    return groupedItems;
+  }
 }
 
 class ProductItem {
