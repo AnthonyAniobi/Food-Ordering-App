@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:food_ordering_app/home_screen/home_screen.dart';
+import 'package:food_ordering_app/tab_overlay/tab_overlay.dart';
 import 'package:food_ordering_app/widgets/primary_button.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -46,7 +47,7 @@ class SplashScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return HomeScreen();
+                      return TabOverlay();
                     },
                   ),
                 );
