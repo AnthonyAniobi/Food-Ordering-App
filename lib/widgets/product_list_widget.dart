@@ -4,8 +4,13 @@ import 'package:food_ordering_app/restaurant_detail/product_detail_screen.dart';
 
 class ProductListWidget extends StatelessWidget {
   final ProductItem product;
+  final RestaurantModel restaurant;
 
-  const ProductListWidget({super.key, required this.product});
+  const ProductListWidget({
+    super.key,
+    required this.product,
+    required this.restaurant,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,10 @@ class ProductListWidget extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return ProductDetailScreen(productItem: product);
+                return ProductDetailScreen(
+                  productItem: product,
+                  restaurant: restaurant,
+                );
               },
             ),
           );

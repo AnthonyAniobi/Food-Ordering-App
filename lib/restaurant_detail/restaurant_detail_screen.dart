@@ -226,7 +226,10 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
                         ),
                       ),
                       ...groupedList[categoryKey]!.map((product) {
-                        return ProductListWidget(product: product);
+                        return ProductListWidget(
+                          product: product,
+                          restaurant: widget.restaurant,
+                        );
                       }),
                     ],
                   );
@@ -242,7 +245,10 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
                     childCount: groupedList[selectedCategory]!.length,
                     (context, index) {
                       final product = groupedList[selectedCategory]![index];
-                      return ProductListWidget(product: product);
+                      return ProductListWidget(
+                        product: product,
+                        restaurant: widget.restaurant,
+                      );
                     },
                   ),
                 );
