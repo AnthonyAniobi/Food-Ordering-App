@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 class PrimaryButton extends StatelessWidget {
   final void Function() onTap;
   final String text;
-  const PrimaryButton({super.key, required this.onTap, required this.text});
+  final bool isLoading;
+  const PrimaryButton({
+    super.key,
+    required this.onTap,
+    required this.text,
+    this.isLoading = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: isLoading ? null : onTap,
       child: Container(
         height: 61,
         width: double.maxFinite,
@@ -17,14 +23,17 @@ class PrimaryButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(23),
           color: const Color(0xFFFFA500),
         ),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: const Color(0xFF101010),
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-          ),
-        ),
+        child:
+            isLoading
+                ? CircularProgressIndicator(color: Colors.black)
+                : Text(
+                  text,
+                  style: TextStyle(
+                    color: const Color(0xFF101010),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                  ),
+                ),
       ),
     );
   }

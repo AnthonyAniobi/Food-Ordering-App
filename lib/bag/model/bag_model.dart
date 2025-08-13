@@ -52,4 +52,10 @@ class BagModel {
       (item) => item.productId == id && item.details == details,
     );
   }
+
+  get items => _items;
+
+  void clearCart() {
+    _items.clear();
+  }
 }

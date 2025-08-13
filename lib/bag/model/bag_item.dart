@@ -22,4 +22,30 @@ class BagItem {
     required this.details,
     this.quantity = 1,
   });
+
+  factory BagItem.fromJson(Map<String, dynamic> json) {
+    return BagItem(
+      productId: json['productId'],
+      restaurantId: json['restaurantId'],
+      restaurantName: json['restaurantName'],
+      name: json['name'],
+      image: json['image'],
+      size: json['size'],
+      price: json['price'],
+      details: json['details'],
+      quantity: json['quantity'],
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    'productId': productId,
+    'restaurantId': restaurantId,
+    'restaurantName': restaurantName,
+    'name': name,
+    'image': image,
+    'size': size,
+    'price': price,
+    'details': details,
+    'quantity': quantity,
+  };
 }

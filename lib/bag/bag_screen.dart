@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ordering_app/bag/checkout_screen.dart';
 import 'package:food_ordering_app/bag/model/bag_model.dart';
 import 'package:food_ordering_app/widgets/bag_item_widget.dart';
 import 'package:food_ordering_app/widgets/primary_button.dart';
@@ -80,7 +81,19 @@ class _BagScreenState extends State<BagScreen> {
                     isBold: true,
                   ),
                   SizedBox(height: 10),
-                  PrimaryButton(onTap: () {}, text: 'Checkout'),
+                  PrimaryButton(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return CheckoutScreen();
+                          },
+                        ),
+                      );
+                    },
+                    text: 'Checkout',
+                  ),
                   SizedBox(height: 100),
                 ],
               ),

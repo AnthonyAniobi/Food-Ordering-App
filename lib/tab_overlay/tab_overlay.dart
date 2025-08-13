@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_ordering_app/bag/bag_screen.dart';
 import 'package:food_ordering_app/constants/app_images.dart';
+import 'package:food_ordering_app/constants/app_utils.dart';
 import 'package:food_ordering_app/home_screen/home_screen.dart';
 import 'package:food_ordering_app/orders/orders_screen.dart';
 import 'package:food_ordering_app/profile/profile_screen.dart';
@@ -15,16 +16,15 @@ class TabOverlay extends StatefulWidget {
 
 class _TabOverlayState extends State<TabOverlay>
     with SingleTickerProviderStateMixin {
-  late TabController tabController;
   int tabIndex = 0;
 
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 4, vsync: this);
-    tabController.addListener(() {
+    AppUtils.tabController = TabController(length: 4, vsync: this);
+    AppUtils.tabController.addListener(() {
       setState(() {
-        tabIndex = tabController.index;
+        tabIndex = AppUtils.tabController.index;
       });
     });
   }
@@ -35,7 +35,7 @@ class _TabOverlayState extends State<TabOverlay>
       body: Stack(
         children: [
           TabBarView(
-            controller: tabController,
+            controller: AppUtils.tabController,
             children: [
               HomeScreen(),
               BagScreen(),
@@ -96,7 +96,7 @@ class _TabOverlayState extends State<TabOverlay>
     return Expanded(
       child: InkWell(
         onTap: () {
-          tabController.animateTo(index);
+          AppUtils.tabController.animateTo(index);
           setState(() {
             tabIndex = index;
           });
