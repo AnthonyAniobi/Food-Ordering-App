@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:food_ordering_app/bag/model/bag_item.dart';
 import 'package:food_ordering_app/orders/model/address_model.dart';
 import 'package:food_ordering_app/orders/model/delivery_information.dart';
@@ -11,6 +12,27 @@ class OrderModel {
   final double deliveryFee;
   final DeliveryInformation? info;
   final UserAdressModel address;
+
+  double get subtotal =>
+      items.fold(0, (prev, item) => prev + (item.price * item.quantity));
+  double get total => subtotal + deliveryFee;
+  int get quantity => items.fold(0, (prev, item) => prev + item.quantity);
+
+  Color get statusColor => switch (status) {
+    'pending' => Colors.grey,
+    'delivered' => Colors.green,
+    'cancelled' => Colors.red,
+    _ => Colors.orange,
+  };
+
+  String get statusText => switch (status) {
+    'delivered' => 'Completed',
+    'confirmed' => 'Preparing',
+    'pending' => 'In Progress',
+    'cancelled' => 'Cancelled',
+    'dispatched' => 'In Delivery',
+    _ => 'Invalid type',
+  };
 
   OrderModel({
     required this.orderId,
